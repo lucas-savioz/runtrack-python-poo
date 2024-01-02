@@ -3,7 +3,7 @@ class Personnage:
         self.x = x
         self.y = y
 
-    def afficherLesPersonnages(self):
+    def position(self):
         return "Les coordonnées sont : (" + str(self.x) + ", " + str(self.y) + ")."
 
     def gauche(self):
