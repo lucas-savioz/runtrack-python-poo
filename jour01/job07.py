@@ -24,7 +24,7 @@ class Personnage:
 
 
 personnage = Personnage(3, 7)
-print(personnage.afficherLesPersonnages())
+print(personnage.position())
 print(personnage.gauche())
 print(personnage.droite())
 print(personnage.haut())
