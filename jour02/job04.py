@@ -4,31 +4,35 @@ class Student:
         self.__prenom = prenom
         self.__numEtudiant = numEtudiant
         self.__credit = credit
+        self.__level = self.studentEval()
     
     def add_credits(self):
-
         if self.__credit <= 0:
-            print("Vos crédit doivent être supérieur à 0.")
+            print("Vos crédits doivent être supérieurs à 0.")
         else:
             print("Le nombre de crédits de", self.__prenom, self.__nom, "est de", self.__credit)
 
         while self.__credit < 30:
-                self.__credit += 10
-                print("Le nombre de crédits de", self.__prenom, self.__nom, "est de", self.__credit)
-    
+            self.__credit += 10
+            print("Le nombre de crédits de", self.__prenom, self.__nom, "est de", self.__credit)
+
     def studentEval(self):
-         
         if self.__credit >= 90:
-            print("Excellent")
+            return "Excellent"
         elif self.__credit >= 80:
-            print("Très bien")
+            return "Très bien"
         elif self.__credit >= 70:
-            print("Bien")
+            return "Bien"
         elif self.__credit >= 60:
-            print("Passable")
+            return "Passable"
         else:
-            self.__credit < 60
-            print("Insuffisant")
+            return "Insuffisant"
+
+    def studentInfo(self):
+        print("Nom:", self.__nom)
+        print("Prénom:", self.__prenom)
+        print("Identifiant:", self.__numEtudiant)
+        print("Niveau:", self.__level)
 
 # Création d'une instance de la classe Student
 etudiant = Student("Doe", "John", 145, 100)
@@ -36,4 +40,8 @@ etudiant = Student("Doe", "John", 145, 100)
 # Appel de la méthode add_credits
 etudiant.add_credits()
 
+# Appel de la méthode studentEval
 etudiant.studentEval()
+
+# Appel de la méthode studentInfo
+etudiant.studentInfo()
